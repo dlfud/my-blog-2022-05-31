@@ -1,22 +1,14 @@
-import { Link } from 'gatsby'
-import React from "react"
-import Layout from '../components/Layout'
-
+import React from "react";
+import Layout from "../components/Layout";
 
 // markup
 const IndexPage = () => {
   return (
-    <main>
-      <title>Home page???</title>
-      <h1>Home Page!!!</h1>
-      <div >
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/test">Test</Link>
-      </div>
-      <Layout pageTitle="Home Page"></Layout>
-    </main>
-  )
-}
+    <Layout>
+      <title>HomePage</title>
+      <h1>HomePage</h1>
+    </Layout>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
