@@ -1,5 +1,5 @@
+import { Link } from 'gatsby'
 import React from "react"
-import {Link} from 'gatsby'
 import Layout from '../pages/Layout'
 
 
@@ -9,7 +9,11 @@ const IndexPage = () => {
     <main>
       <title>Home page???</title>
       <h1>Home Page!!!</h1>
-      <Link to="/about">About</Link>
+      <div >
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/test">Test</Link>
+      </div>
       <Layout pageTitle="Home Page"></Layout>
     </main>
   )
