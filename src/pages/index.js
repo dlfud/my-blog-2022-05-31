@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React from "react"
-import Layout from '../pages/Layout'
+import Layout from '../components/Layout'
 
 
 // markup
