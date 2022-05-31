@@ -1,5 +1,7 @@
 import React from "react"
-import{Link} from 'gatsby'
+import {Link} from 'gatsby'
+import Layout from '../pages/Layout'
+
 
 // markup
 const IndexPage = () => {
@@ -8,6 +10,7 @@ const IndexPage = () => {
       <title>Home page???</title>
       <h1>Home Page!!!</h1>
       <Link to="/about">About</Link>
+      <Layout pageTitle="Home Page"></Layout>
     </main>
   )
 }
