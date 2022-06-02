@@ -7,22 +7,24 @@ import {
   navLinkItem,
   navLinkText,
   siteTitle,
-} from "./layout.module.css";
+} from "./Layout.module.css";
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
-    query{
-        site{
-            siteMetadata{
-                title
-                description
-            }
+    query {
+      site {
+        siteMetadata {
+          title
+          description
         }
+      }
     }
-  `)
+  `);
   return (
     <div className={container}>
-      <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+      <title>
+        {pageTitle} | {data.site.siteMetadata.title}
+      </title>
       <header className={siteTitle}>{data.site.siteMetadata.title}</header>
       <div>{data.site.siteMetadata.description}</div>
       <nav>
