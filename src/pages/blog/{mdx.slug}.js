@@ -1,10 +1,12 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql} from "gatsby";
+import {Link} from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../../components/Layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import CodeBlock from "../../components/CodeBlock";
 import { MDXProvider } from "@mdx-js/react";
+import kebabCase from "lodash.kebabcase"
 
 const BlogPost = ({ data }) => {
   const tags = data.mdx.frontmatter.tags;
@@ -35,7 +37,17 @@ const BlogPost = ({ data }) => {
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </MDXProvider>
       <hr/>
-      TAGS : {tags && tags.join(", ")}
+      {/* TAGS : {tags && tags.join(", ")} */}
+      <div className="tags">
+        <ul>
+          {tags && (
+            tags.map(tag => (
+              <li key={kebabCase(tag)}>
+                <Link to={`/tags/${kebabCase(tag)}`}>{kebabCase(tag)}</Link>
+              </li>
+            )))}
+        </ul>
+      </div>
     </Layout>
   );
 };
